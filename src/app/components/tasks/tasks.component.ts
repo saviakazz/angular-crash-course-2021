@@ -14,6 +14,8 @@ export class TasksComponent implements OnInit {
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
+	//Kadangi is serviso gauname Observable tipo elementa, todėl kvieciame metoda subscribe, kad gautume norimus duomenis ir juos constantly watch it
+	//(tasks) yra return value
     this.taskService.getTasks().subscribe((tasks) => (this.tasks = tasks));
   }
 
