@@ -27,6 +27,7 @@ export class TaskService {
   }
 
   updateTaskReminder(task: Task): Observable<Task> {
+	//$ reiškia template literal
     const url = `${this.apiUrl}/${task.id}`;
     return this.http.put<Task>(url, task, httpOptions);
   }
