@@ -1,5 +1,5 @@
 <div
-  [ngClass]="{ reminder: task.reminder }"
+  [ngClass]="{ reminder: task.reminder }" <!-- jei task.reminder is true, tuomet div'ui priskiria css klase reminder -->
   class="task"
   (dblclick)="onToggle(task)"
 >

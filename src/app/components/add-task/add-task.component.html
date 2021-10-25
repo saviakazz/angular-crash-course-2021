@@ -1,9 +1,11 @@
+<!-- formoje, jei naudojame (ngSubmit), nereikia aprasine preventDefault() ir pan -->
 <form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
   <div class="form-control">
     <label for="text">Task</label>
     <input
       type="text"
       name="text"
+	  <!-- Angular two way data binding, kur name ir [(ngModel)] turi buti tokios pacios reiksmes -->
       [(ngModel)]="text"
       id="text"
       placeholder="Add Task"

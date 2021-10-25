@@ -1,4 +1,4 @@
-<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<app-add-task (onAddTask)="addTask($event)"></app-add-task> <!-- irasius $event, galima paimti is vaikinio komponento isemitinta elementa (siuo atveju nauja task'a) -->
 <app-task-item
   *ngFor="let task of tasks"
   [task]="task"

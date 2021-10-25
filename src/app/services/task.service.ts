@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Task } from '../Task';
 
+//reikalingas, kadangi per http request mes taip pat siunciame ir konkretaus tipo header 
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
@@ -27,7 +28,7 @@ export class TaskService {
   }
 
   updateTaskReminder(task: Task): Observable<Task> {
-	//$ reiškia template literal
+	//$ reiškia template literal, kur leidzia parametrizuoti i String paduodamas reiksmes
     const url = `${this.apiUrl}/${task.id}`;
     return this.http.put<Task>(url, task, httpOptions);
   }

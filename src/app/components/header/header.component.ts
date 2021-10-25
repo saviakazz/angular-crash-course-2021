@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from '../../services/ui.service';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs'; //reikalingas, kad butu galima gauti reiksmes is ui.service
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,8 +12,8 @@ export class HeaderComponent implements OnInit {
   title: string = 'Task Tracker';
   showAddTask: boolean = false;
   subscription: Subscription;
-
   constructor(private uiService: UiService, private router: Router) {
+	  //subscribe'nima showAddTask value is ui.service
     this.subscription = this.uiService
       .onToggle()
       .subscribe((value) => (this.showAddTask = value));
@@ -30,6 +30,7 @@ export class HeaderComponent implements OnInit {
     this.uiService.toggleAddTask();
   }
 
+  //html'e esanciame app-button komponente tikriname, ar route'as yra "/" ar ne, akd butu aisku, rodyti mygtuka ar ne
   hasRoute(route: string) {
     return this.router.url === route;
   }

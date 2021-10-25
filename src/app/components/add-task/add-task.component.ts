@@ -8,8 +8,9 @@ import { Task } from '../../Task';
   templateUrl: './add-task.component.html',
   styleUrls: ['./add-task.component.css'],
 })
-export class AddTaskComponent implements OnInit {
-  @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
+export class AddTaskComponent implements OnInit {  
+  @Output() onAddTask: EventEmitter<Task> = new EventEmitter(); //Emitins ne tik pati action'a, bet ir nauja Task elementa
+  //tam, kad butu galima html laukus susieti tiesiai su ts faile esanciais laukais, app.module.ts reikia import { FormsModule } from '@angular/forms';
   text: string;
   day: string;
   reminder: boolean = false;

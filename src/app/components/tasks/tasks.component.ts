@@ -33,6 +33,7 @@ export class TasksComponent implements OnInit {
   }
 
   addTask(task: Task) {
+	  //(task)=> reiskia, kad turime callback funkcija this.taskService.add(task), kuri mums grazins  task'a, kuri norime UI itrauki i task'u masyva
     this.taskService.addTask(task).subscribe((task) => this.tasks.push(task));
   }
 }
