@@ -27,3 +27,6 @@ npm run server
 ```
 ng build
 ```
+
+###Tam, kad veiktu, butina paleisti json serveri, komanda: json-server --watch db.json --port 5000
+
